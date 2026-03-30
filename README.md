@@ -1,5 +1,5 @@
 # banking-system-api
-Tech Stack
+**Tech Stack**
 
 - Java 17 – Core programming language for the API.
 - Spring Boot – Framework for building RESTful APIs efficiently.
