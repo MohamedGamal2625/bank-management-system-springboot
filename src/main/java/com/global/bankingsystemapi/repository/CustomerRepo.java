@@ -1,7 +1,7 @@
-package com.global.bankingsystemapi.Repository;
+package com.global.bankingsystemapi.repository;
 
 import com.global.bankingsystemapi.entity.Customer;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface CustomerRepo extends JpaRepository<Customer,Long> {
+public interface CustomerRepo extends JpaRepository<Customer, Long> {
 }
