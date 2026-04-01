@@ -1,5 +1,6 @@
-# banking-system-api
-A banking system API designed to manage customers and their accounts efficiently. This project simulates real-world banking operations, including account creation and money transactions such as deposits and withdrawals.
+# bank-management-system
+built using Spring Boot to simulate real-world banking operations such as managing customers, accounts, and financial transactions.
+The system follows clean architecture principles and demonstrates best backend practices including layered design, DTO usage, transaction handling, and exception management.
  # **Tech Stack**
 
 - Java 17
@@ -11,3 +12,80 @@ A banking system API designed to manage customers and their accounts efficiently
 - Exception handling 
 - Maven 
 - Jakarta Validation
+ # **Architecture & Design**
+ The project follows a **layered architecture** that separates concerns and ensures maintainable, clean code.
+ **Flow Diagram:**
+ [Client] 
+   │
+   ▼
+[Controller] 
+   │
+   ▼
+[DTO Layer]  ← Maps incoming RequestDTOs to Entities, and Entities to ResponseDTOs
+   │
+   ▼
+[Service]  ← Contains business logic such as transactions and validations
+   │
+   ▼
+[Repository]  ← Handles database operations using JPA/Hibernate
+   │
+   ▼
+[Database]  ← MySQL tables (Customer, Account, Transaction)
+**Layers Explained:**
+- Controller Layer – Handles HTTP requests and responses.
+- DTO Layer – Transfers data between client and server. Maps request DTOs to entities and entities to response DTOs.
+- Service Layer – Contains business logic such as transactions, deposits, withdrawals, and transfers. Ensures business rules are applied.
+- Repository Layer – Interacts with the database using Spring Data JPA.
+- Entity Layer – Represents database tables and relationships.
+  **Features**
+  **Customer Management**
+  - Create customer
+  - Retrieve customer by ID
+    **Account Management**
+  - Create account
+  - Retrieve account by ID
+  - Get all accounts
+  - Update account status (ACTIVE / SUSPENDED)
+    **Transaction Management**
+  - Deposit money
+  - Withdraw money
+  - Transfer money between accounts
+    **Exceptions Handled**
+  - Prevent insufficient balance withdrawals
+  - Prevent transfers to the same account
+  - Validate transaction amounts
+    **API Endpoints**
+    **Customers**
+  - POST /api/customers – Create customer
+  - GET /api/customers/{id} – Get customer by ID
+    **Accounts**
+  - POST /api/accounts – Create account
+  - GET /api/accounts/{id} – Get account by ID
+  - GET /api/accounts – Get all accounts
+  - PATCH /api/accounts/{id}/status – Update account status
+    **Transactions**
+  - POST /api/transactions/deposit – Deposit money
+  - POST /api/transactions/withdraw – Withdraw money
+  - POST /api/transactions/transfer – Transfer money
+    **Key Concepts**
+  - Layered Architecture (Controller → DTO → Service → Repository → Database)
+  - DTO Pattern (Request & Response separation)
+  - RESTful API Design
+  - JPA Relationships (OneToMany / ManyToOne)
+  - Transaction Handling (@Transactional)
+  - Enum Usage for business states
+  - Exception Handling
+  - Clean Code Principles
+    **Database Design**
+  - customers
+  - accounts
+  - transactions
+    **Relationships:**
+  - One Customer → Many Accounts
+  - One Account → Many Transactions (as sender & receiver)
+    **ransaction Table Columns:**
+  - source_account_id
+  - target_account_id
+  - amount
+  - transaction_type
+  - time_stamp
