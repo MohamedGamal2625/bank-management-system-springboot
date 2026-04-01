@@ -36,7 +36,7 @@ The system follows clean architecture principles and demonstrates best backend p
 - Service Layer – Contains business logic such as transactions, deposits, withdrawals, and transfers. Ensures business rules are applied.<br>
 - Repository Layer – Interacts with the database using Spring Data JPA.<br>
 - Entity Layer – Represents database tables and relationships.<br>
-  ## Features
+## Features
   **Customer Management**
   - Create customer
   - Retrieve customer by ID
@@ -53,7 +53,7 @@ The system follows clean architecture principles and demonstrates best backend p
   - Prevent insufficient balance withdrawals
   - Prevent transfers to the same account
   - Validate transaction amounts
-    **API Endpoints**
+## API Endpoints
     **Customers**
   - POST /api/customers – Create customer
   - GET /api/customers/{id} – Get customer by ID
