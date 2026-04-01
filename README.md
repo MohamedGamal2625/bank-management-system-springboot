@@ -39,33 +39,33 @@ The system follows clean architecture principles and demonstrates best backend p
 ## Features
   **Customer Management**
   - Create customer
-  - Retrieve customer by ID
+  - Retrieve customer by ID<br>
   **Account Management**
   - Create account
   - Retrieve account by ID
   - Get all accounts
-  - Update account status (ACTIVE / SUSPENDED)
+  - Update account status (ACTIVE / SUSPENDED)<br>
   **Transaction Management**
   - Deposit money
   - Withdraw money
-  - Transfer money between accounts
+  - Transfer money between accounts<br>
   **Exceptions Handled**
   - Prevent insufficient balance withdrawals
   - Prevent transfers to the same account
-  - Validate transaction amounts
+  - Validate transaction amounts<br>
 ## API Endpoints
     **Customers**
   - POST /api/customers – Create customer
-  - GET /api/customers/{id} – Get customer by ID
+  - GET /api/customers/{id} – Get customer by ID<br>
     **Accounts**
   - POST /api/accounts – Create account
   - GET /api/accounts/{id} – Get account by ID
   - GET /api/accounts – Get all accounts
-  - PATCH /api/accounts/{id}/status – Update account status
+  - PATCH /api/accounts/{id}/status – Update account status<br>
     **Transactions**
   - POST /api/transactions/deposit – Deposit money
   - POST /api/transactions/withdraw – Withdraw money
-  - POST /api/transactions/transfer – Transfer money
+  - POST /api/transactions/transfer – Transfer money<br>
     **Key Concepts**
   - Layered Architecture (Controller → DTO → Service → Repository → Database)
   - DTO Pattern (Request & Response separation)
@@ -74,14 +74,14 @@ The system follows clean architecture principles and demonstrates best backend p
   - Transaction Handling (@Transactional)
   - Enum Usage for business states
   - Exception Handling
-  - Clean Code Principles
+  - Clean Code Principles<br>
     **Database Design**
   - customers
   - accounts
-  - transactions
+  - transactions<br>
     **Relationships:**
   - One Customer → Many Accounts
-  - One Account → Many Transactions (as sender & receiver)
+  - One Account → Many Transactions (as sender & receiver)<br>
     **ransaction Table Columns:**
   - source_account_id
   - target_account_id
