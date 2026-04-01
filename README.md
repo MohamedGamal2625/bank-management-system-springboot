@@ -54,7 +54,7 @@ The system follows clean architecture principles and demonstrates best backend p
   - Prevent transfers to the same account
   - Validate transaction amounts<br>
 ## API Endpoints
-    **Customers**
+   **Customers**
   - POST /api/customers – Create customer
   - GET /api/customers/{id} – Get customer by ID<br>
     **Accounts**
@@ -66,7 +66,7 @@ The system follows clean architecture principles and demonstrates best backend p
   - POST /api/transactions/deposit – Deposit money
   - POST /api/transactions/withdraw – Withdraw money
   - POST /api/transactions/transfer – Transfer money<br>
-    **Key Concepts**
+    ## Key Concepts
   - Layered Architecture (Controller → DTO → Service → Repository → Database)
   - DTO Pattern (Request & Response separation)
   - RESTful API Design
@@ -75,11 +75,11 @@ The system follows clean architecture principles and demonstrates best backend p
   - Enum Usage for business states
   - Exception Handling
   - Clean Code Principles<br>
-    **Database Design**
+    ## Database Design
   - customers
   - accounts
   - transactions<br>
-    **Relationships:**
+    ## Relationships:
   - One Customer → Many Accounts
   - One Account → Many Transactions (as sender & receiver)<br>
     **ransaction Table Columns:**
