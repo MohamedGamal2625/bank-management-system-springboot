@@ -1,7 +1,7 @@
 # bank-management-system
 built using Spring Boot to simulate real-world banking operations such as managing customers, accounts, and financial transactions.
 The system follows clean architecture principles and demonstrates best backend practices including layered design, DTO usage, transaction handling, and exception management.
- ## Tech Stack
+## Tech Stack
 - Java 17
 - Spring Boot
 - Spring Data JPA
@@ -11,9 +11,9 @@ The system follows clean architecture principles and demonstrates best backend p
 - Exception handling 
 - Maven 
 - Jakarta Validation
- ## Architecture & Design
+## Architecture & Design
  The project follows a <b> layered architecture </b> that separates concerns and ensures maintainable, clean code.<br>
- ### Flow Diagram:
+### Flow Diagram:
  ![Bank Diagram](flowdiagram/flowdiagram.png)
 ### Layers Explained:
   - Controller Layer – Handles HTTP requests and responses.<br>
@@ -21,7 +21,7 @@ The system follows clean architecture principles and demonstrates best backend p
   - Service Layer – Contains business logic such as transactions, deposits, withdrawals, and transfers. Ensures business rules are applied.<br>
   - Repository Layer – Interacts with the database using Spring Data JPA.<br>
   - Entity Layer – Represents database tables and relationships.<br>
-   ## Features
+## Features
 ### Customer Management
   - Create customer
   - Retrieve customer by ID<br>
@@ -38,7 +38,7 @@ The system follows clean architecture principles and demonstrates best backend p
   - Prevent insufficient balance withdrawals
   - Prevent transfers to the same account
   - Validate transaction amounts<br>
-    ## API Endpoints
+## API Endpoints
 ### Customers
   - POST /api/customers – Create customer
   - GET /api/customers/{id} – Get customer by ID<br>
@@ -60,12 +60,12 @@ The system follows clean architecture principles and demonstrates best backend p
   - Enum Usage for business states
   - Exception Handling
   - Clean Code Principles<br>
-    ## Database Design
+## Database Design
 ### Tables
   - customers
   - accounts
   - transactions<br>
-    ## Relationships:
+## Relationships:
   - One Customer → Many Accounts
   - One Account → Many Transactions (as sender & receiver)<br>
 ### Transaction Table Columns:
