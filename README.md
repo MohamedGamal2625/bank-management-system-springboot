@@ -12,7 +12,7 @@ The system follows clean architecture principles and demonstrates key concepts i
 - Maven 
 - Jakarta Validation
 ## Architecture & Design
- The project follows a <b> layered architecture </b> that separates concerns and ensures maintainable, clean code.<br>
+ The project follows a <b> layered architecture </b> that ensures maintainable, clean code.<br>
 #### Flow Diagram:
  ![Bank Diagram](flowdiagram/flowdiagram.png)
 #### Layers Explained:
