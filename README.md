@@ -1,6 +1,6 @@
 # bank-management-system
 built using Spring Boot to simulate real-world banking operations such as managing customers, accounts, and financial transactions.
-The system follows clean architecture principles and demonstrates best backend practices including layered design, DTO usage, transaction handling, and exception management.
+The system follows clean architecture principles and demonstrates key concepts including layered design, DTO usage, transaction handling, and exception management.
 ## Tech Stack
 - Java 17
 - Spring Boot
