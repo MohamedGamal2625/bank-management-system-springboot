@@ -1,6 +1,7 @@
 package com.global.bankingsystemapi.controller;
 
 import com.global.bankingsystemapi.entity.Customer;
+import com.global.bankingsystemapi.exception.ResourceNotFoundException;
 import com.global.bankingsystemapi.repository.CustomerRepo;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -23,7 +24,7 @@ public class CustomerController {
     @GetMapping("/{id}")
     public ResponseEntity<Customer> getCustomer(@PathVariable Long id) {
         Customer c = customerRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Customer not found"));
+                .orElseThrow(() -> new ResourceNotFoundException("Customer not found"));
         return ResponseEntity.ok(c);
     }
 }

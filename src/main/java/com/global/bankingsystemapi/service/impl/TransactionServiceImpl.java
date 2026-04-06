@@ -86,7 +86,7 @@ public class TransactionServiceImpl implements TransactionService {
         return accountRepo.findById(id).orElseThrow(()-> new ResourceNotFoundException("Account not found with id :"+id));
     }
     private void validateAmount(BigDecimal amount){
-        if (amount == null || amount.compareTo(amount.ZERO) <= 0 )
+        if (amount == null || amount.compareTo(BigDecimal.ZERO) <= 0 )
             throw new IllegalArgumentException("Amount must be greater than zero");
     }
     private TransactionResponseDTO  mapToResponse(Transaction transaction){

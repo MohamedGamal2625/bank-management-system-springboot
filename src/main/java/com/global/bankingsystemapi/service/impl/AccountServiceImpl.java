@@ -2,8 +2,10 @@ package com.global.bankingsystemapi.service.impl;
 
 import com.global.bankingsystemapi.dto.account.AccountRequestDTO;
 import com.global.bankingsystemapi.dto.account.AccountResponseDTO;
+import com.global.bankingsystemapi.dto.transaction.TransactionResponseDTO;
 import com.global.bankingsystemapi.entity.Account;
 import com.global.bankingsystemapi.entity.Customer;
+import com.global.bankingsystemapi.entity.Transaction;
 import com.global.bankingsystemapi.entity.enums.AccountStatus;
 import com.global.bankingsystemapi.exception.ResourceNotFoundException;
 import com.global.bankingsystemapi.repository.AccountRepo;
@@ -70,9 +72,21 @@ public class AccountServiceImpl implements AccountService {
                 .accountType(account.getAccountType())
                 .status(account.getStatus())
                 .customerId(account.getCustomer().getId())
+                .sentTransactions(account.getSentTransactions().stream().map(this::mapTransactionToDTO).toList())
+                .receivedTransactions(account.getReceivedTransactions().stream().map(this::mapTransactionToDTO).toList())
                 .build();
     }
     private String generateAccountNumber() {
         return "ACC-" + System.currentTimeMillis();
+    }
+    private TransactionResponseDTO mapTransactionToDTO(Transaction t) {
+        return TransactionResponseDTO.builder()
+                .id(t.getId())
+                .amount(t.getAmount())
+                .type(t.getTransactionType())
+                .sourceAccountId(t.getSourceAccount() != null ? t.getSourceAccount().getId() : null)
+                .targetAccountId(t.getTargetAccount() != null ? t.getTargetAccount().getId() : null)
+                .createdAt(t.getTimeStamp())
+                .build();
     }
 }

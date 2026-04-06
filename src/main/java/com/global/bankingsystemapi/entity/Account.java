@@ -32,17 +32,20 @@ public class Account {
     private BigDecimal balance;
 
     @Column(nullable = false)
+    @Enumerated(EnumType.STRING)
     private AccountStatus status;
 
     @Enumerated(EnumType.STRING)
     private AccountType accountType;
 
-    @OneToMany(mappedBy = "sourceAccount")
-    @JsonManagedReference
+    @OneToMany(mappedBy = "sourceAccount", fetch = FetchType.EAGER)
+    @JsonIgnore
+    @Builder.Default
     private List<Transaction> sentTransactions = new ArrayList<>();
 
-    @OneToMany(mappedBy = "targetAccount")
-    @JsonManagedReference
+    @OneToMany(mappedBy = "targetAccount" , fetch = FetchType.EAGER)
+    @JsonIgnore
+    @Builder.Default
     private List<Transaction> receivedTransactions = new ArrayList<>();
 
     @ManyToOne
