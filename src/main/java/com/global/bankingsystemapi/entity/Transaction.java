@@ -1,6 +1,5 @@
 package com.global.bankingsystemapi.entity;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.global.bankingsystemapi.entity.enums.TransactionType;
 import jakarta.persistence.*;
